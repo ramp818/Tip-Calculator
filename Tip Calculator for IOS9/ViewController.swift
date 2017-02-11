@@ -57,12 +57,20 @@ class ViewController: UIViewController {
     }
     
     func printTip(){
-        lblTip.text = "Tip: $\(totalTip)"
-        lblTipTotal.text = "$\(totalMealCost)"
+        let formatTip = String(format: "%0.2f", totalTip)
+        let formatTotal = String(format: "%0.2f", totalMealCost)
+        
+        lblTip.text = "Tip: $\(formatTip)"
+        lblTipTotal.text = "$\(formatTotal)"
     
     }
     
     func clear(){
+        txtMealCost.text = ""
+        txtTipPercentage.text = ""
+        
+        lblTip.text = "Tip: $0.00"
+        lblTipTotal.text = "$0.00"
     
     }
     
